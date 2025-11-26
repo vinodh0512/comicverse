@@ -1,0 +1,33 @@
+[
+    {
+        "user_id": "user_creator_1",
+        "username": "creator",
+        "email": "creator@comicverse.com",
+        "status": "pending",
+        "requested_at": "2025-11-24 13:57:53"
+    },
+    {
+        "user_id": "user_6924a5ff7e444",
+        "username": "vinodh0512",
+        "email": "abi@gmail.com",
+        "status": "approved",
+        "requested_at": "2025-11-25 08:45:50",
+        "approved_at": "2025-11-25 08:54:08",
+        "revoked_at": "2025-11-25 08:53:34"
+    },
+    {
+        "user_id": "user_692497a3bfc9f",
+        "username": "acethumbstudio",
+        "email": "acethumbstudio@gmail.com",
+        "status": "rejected",
+        "requested_at": "2025-11-25 09:32:46",
+        "rejected_at": "2025-11-25 09:36:34",
+        "reason": "broo sorry",
+        "portfolio": "https:\/\/soilcalcify.com",
+        "bio": "verrv",
+        "genres": "action",
+        "samples": "dc mds",
+        "social": "rv",
+        "display_name": "acethumbstudio"
+    }
+]

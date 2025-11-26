@@ -1,0 +1,9 @@
+[
+    {
+        "id": "creator_default",
+        "username": "comicvere@creator.com",
+        "password": "$2y$10$pGzEZXFcz27K8FYlcDiD2OKBx1m1dvbdnSBR3aFsM5sNXhBIwMXnS",
+        "joined_at": "2025-11-23 10:12:43",
+        "role": "creator"
+    }
+]

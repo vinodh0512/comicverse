@@ -1,0 +1,54 @@
+[
+    {
+        "id": "user_6922a64229865",
+        "username": "vinodh._.24",
+        "email": "vinodh0512@gmail.com",
+        "password": "$2y$10$w1Hor3tgrfe4rf6ps2F1KeTpoj9MF6PoRjfu1n8SSQVV4jkLbQjeG",
+        "joined": "2025-11-23 06:14:26"
+    },
+    {
+        "id": "user_6922afe7cb33d",
+        "username": "shynth",
+        "email": "minecraftvellode@gmail.com",
+        "password": "$2y$10$1fx1vasAE5VqeQXsITilRu29kZ9zWns1zvmnXGWWKUFjfsjOtuE4W",
+        "joined": "2025-11-23 06:55:35"
+    },
+    {
+        "id": "user_creator_1",
+        "username": "creator",
+        "email": "creator@comicverse.com",
+        "password": "$2y$10$jMVWB6iYOXNX1kZK4SdVieqmkt6Mj3TMeHo.65UfLNS4ops8qU6Pe",
+        "joined": "2025-11-24 00:00:00",
+        "role": "creator"
+    },
+    {
+        "id": "user_692497a3bfc9f",
+        "username": "acethumbstudio",
+        "email": "acethumbstudio@gmail.com",
+        "password": "$2y$10$r37XRmT6TMapZ4PEb4yhPukkf.VtKKZq3dV8rEHybLzWAc6sfPDc2",
+        "joined": "2025-11-24 17:36:35",
+        "role": "reader",
+        "verified": true,
+        "status": "active",
+        "ban_reason": null,
+        "ban_until": null
+    },
+    {
+        "id": "user_6924a5ff7e444",
+        "username": "vinodh0512",
+        "email": "vinodhrx100@gmail.com",
+        "password": "$2y$10$cjBag7WfzLO1kuAcjfEdSu0G2m6TYjpqtZJ7l2oo2ZLc7ZcvMXjAG",
+        "joined": "2025-11-24 18:37:51",
+        "role": "creator",
+        "verified": true
+    },
+    {
+        "id": "user_6924b2a795ea6",
+        "username": "abi",
+        "email": "abi@gmail.com",
+        "password": "$2y$10$Bul9as6TPgSgXY75N3\/X9eOP0b6ORmmpw5DVAQIYUeJ9xdGp4CBgK",
+        "joined": "2025-11-24 19:31:51",
+        "role": "creator",
+        "verified": false
+    }
+]

@@ -1,0 +1,21 @@
+{
+    "id": "content_6926d22f0a274",
+    "meta": {
+        "series_name": "LENFB",
+        "folder_name": "LENFB",
+        "content_type": "series",
+        "title": "nfpwen",
+        "unique_id": "0",
+        "creator": "vinodh0512"
+    },
+    "status": {
+        "state": "Live",
+        "upload_date": "2025-11-26 10:10:55",
+        "publish_date": "2025-11-26 10:10:55"
+    },
+    "assets": {
+        "thumbnail_path": "series\/LENFB\/nfpwen_591a9d58\/cover.webp",
+        "video_url": "https:\/\/chatgpt.com\/c\/69268233-cab4-8321-92df-d647677bfc3e",
+        "source_hint": "video_url"
+    }
+}

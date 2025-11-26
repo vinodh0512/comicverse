@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Creator Manifesto | ComicVerse</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* --- VARIABLES --- */
+        :root {
+            --primary: #ec1d24;
+            --primary-glow: rgba(236, 29, 36, 0.7);
+            --bg-dark: #0a0a0a; /* Slightly darker base */
+            --bg-card: #181818;
+            --text-main: #ffffff;
+            --text-dim: #aaaaaa;
+            --gold: #ffd700;
+        }
+
+        /* --- BASE STYLES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; }
+        
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            overflow-x: hidden;
+            /* Enhanced ambient glow effect */
+            background-image: radial-gradient(circle at 50% 10%, rgba(30,30,30,1) 0%, var(--bg-dark) 60%);
+        }
+
+        a { text-decoration: none; color: white; transition: 0.3s; }
+        
+        /* --- NAVBAR (Glassmorphism) --- */
+        .navbar { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 0 5%; height: 60px; 
+            background-color: rgba(15, 15, 15, 0.9); border-bottom: 1px solid #222; 
+            position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px);
+        }
+        .logo { 
+            font-size: 24px; font-weight: 900; letter-spacing: 1px; color: #fff; 
+            background-color: var(--primary); padding: 0 15px; height: 100%; 
+            display: flex; align-items: center; clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-size: 14px; font-weight: 700; text-transform: uppercase; color: #ccc; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- HERO: THE SHADOWS --- */
+        .manifesto-hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* The Spotlight Effect */
+        .spotlight {
+            position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none; z-index: 0;
+            animation: pulseLight 4s infinite alternate;
+        }
+
+        .manifesto-content { max-width: 900px; z-index: 2; position: relative; }
+        
+        .manifesto-tag {
+            color: var(--primary); font-size: 14px; font-weight: 800; letter-spacing: 4px;
+            text-transform: uppercase; margin-bottom: 20px; display: inline-block;
+            border: 1px solid var(--primary); padding: 5px 15px;
+            box-shadow: 0 0 8px rgba(236, 29, 36, 0.4);
+        }
+
+        .manifesto-title {
+            font-size: 72px; /* Made larger */
+            font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 30px;
+            background: linear-gradient(to bottom, #fff, #999); /* Brighter gradient */
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 40px rgba(0,0,0,0.9), 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .manifesto-text {
+            font-size: 20px; color: #ddd; line-height: 1.6; margin-bottom: 40px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* --- THE GRID OF PHILOSOPHY --- */
+        .philosophy-section {
+            padding: 80px 10%;
+            background: var(--bg-card);
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .grid-item {
+            background: #252525; /* Darker background for depth */
+            padding: 40px 30px;
+            border-left: 3px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .grid-item:hover {
+            border-left-color: var(--primary);
+            background: #2a2a2a;
+            transform: translateY(-8px); /* More noticeable lift */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
+
+        .icon-box {
+            font-size: 36px; /* Larger icon */
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .grid-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .grid-item p {
+            color: var(--text-dim);
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        /* --- QUOTE SECTION --- */
+        .quote-section {
+            padding: 100px 5%;
+            text-align: center;
+            background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+        }
+
+        .big-quote {
+            font-size: 32px;
+            font-style: italic;
+            font-weight: 300;
+            color: #fff;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .big-quote::before {
+            content: '"';
+            font-size: 120px; /* Larger quotes */
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -40px;
+            left: -40px;
+        }
+
+        /* --- CTA --- */
+        .join-cta {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(45deg, var(--bg-dark), #1a0505);
+        }
+
+        .cta-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 18px 50px;
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px; /* Increased letter spacing */
+            display: inline-block;
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+            transition: all 0.4s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #ff333b;
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 0 40px var(--primary-glow); /* Intense glow on hover */
+        }
+
+        /* --- FOOTER --- */
+        footer { background-color: #050505; padding: 40px; text-align: center; border-top: 1px solid #222; color: #555; font-size: 12px; }
+
+        @keyframes pulseLight {
+            0% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+            100% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
+        }
+
+        @media (max-width: 768px) {
+            .manifesto-title { font-size: 48px; }
+            .grid-container { gap: 20px; padding: 0 20px; }
+            .philosophy-section { padding: 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.php" class="logo">CV</a> 
+        <div class="nav-links">
+            <a href="index.php">Library</a>
+            <a href="profile.php?prompt=creator_apply">Start Creating</a>
+        </div>
+    </nav>
+
+    <section class="manifesto-hero">
+        <div class="spotlight"></div>
+        <div class="manifesto-content">
+            <span class="manifesto-tag">MANIFESTO: THE FIRST DRAFT</span>
+            <h1 class="manifesto-title">Legends Start in the Shadows</h1>
+            <p class="manifesto-text">
+                Every masterpiece began as a rough sketch. Every icon was once a nobody. 
+                <br>ComicVerse isn't just a library; it's an arena for the <strong>Next Generation of Legends</strong>.
+            </p>
+        </div>
+    </section>
+
+    <section class="philosophy-section">
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="icon-box"><i class="fas fa-fingerprint"></i></div>
+                <h3>Creative Sovereignty</h3>
+                <p>We offer a direct line to your audience, bypassing outdated publishing models. Your story's worth is decided by your fans, not by a boardroom of executives.</p>
+            </div>
+
+            <div class="grid-item">
+                <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                <h3>Raw Talent Over Polish</h3>
+                <p>Focus on passion, not perfection. We champion diverse art styles and unconventional narratives. Your unique voice is your superpower.</p>
+            </div>
+
+            <div class="grid-item">
+                <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                <h3>True Discovery</h3>
+                <p>Tired of being hidden? Our system ensures true discovery. New series are showcased based on engagement, not just platform seniority.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="big-quote">
+            "We are the storytellers who haven't been heard yet. We are the ink on the page that's still drying. We are the Unknown, and we are coming."
+        </div>
+    </section>
+
+    <section class="join-cta">
+        <h2 style="font-size: 36px; text-transform: uppercase; margin-bottom: 20px;">Claim Your Stage.</h2>
+        <p style="color: #999; margin-bottom: 40px;">Join thousands of indie creators building the next generation of Manga and Comics.</p>
+    </section>
+
+    <footer>
+        &copy; 2025 ComicVerse | Dedicated to the Creators of Tomorrow.
+    </footer>
+
+</body>
+</html>
