@@ -243,6 +243,22 @@
             "title": "vignesh",
             "chapter": "",
             "time": "2025-11-26 09:06:59"
+        },
+        {
+            "type": "remove_list",
+            "series": "vh",
+            "content_type": "comic",
+            "title": "",
+            "chapter": "",
+            "time": "2025-11-26 14:56:22"
+        },
+        {
+            "type": "remove_list",
+            "series": "LENFB",
+            "content_type": "series",
+            "title": "",
+            "chapter": "",
+            "time": "2025-11-26 14:56:24"
         }
     ]
 }
