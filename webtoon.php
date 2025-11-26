@@ -6,8 +6,8 @@ require_once __DIR__ . '/includes/session.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Read new movies and webtoons on ComicVerse.">
-    <title>Browse Movies | ComicVerse</title>
+    <meta name="description" content="Read new movies, series, and webtoons on ComicVerse.">
+    <title>Browse Movies & Series | ComicVerse</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         /* --- BASE STYLES --- */
@@ -181,11 +181,11 @@ require_once __DIR__ . '/includes/session.php';
     <main>
         <div class="page-header">
             <div class="header-title">
-                <h1>New <span>Movies</span></h1>
+                <h1>New <span>Movies & Series</span></h1>
                 <p>Watch the latest content on ComicVerse.</p>
             </div>
             <div class="search-wrapper">
-                <input type="text" id="searchInput" class="search-input" placeholder="Search movies..." onkeyup="filterWebtoons()">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search library..." onkeyup="filterWebtoons()">
                 <i class="fas fa-search search-icon"></i>
             </div>
         </div>
@@ -245,7 +245,7 @@ require_once __DIR__ . '/includes/session.php';
                 }
 
                 if (!stories.length) { 
-                    grid.innerHTML = '<div class="no-content">No movies found in library.</div>'; 
+                    grid.innerHTML = '<div class="no-content">No content found in library.</div>'; 
                     return; 
                 }
 
@@ -260,14 +260,18 @@ require_once __DIR__ . '/includes/session.php';
                     rating: story.rating || '0.0' 
                 }));
 
-                // --- CRITICAL FIX: ACCEPT 'movie' AND 'webtoon' TYPES ---
-                allWebtoons = norm.filter(s => s.type === 'movie' || s.type === 'webtoon');
+                // --- FILTER: Accept 'movie', 'webtoon', AND 'series' ---
+                allWebtoons = norm.filter(s => 
+                    s.type === 'movie' || 
+                    s.type === 'webtoon' || 
+                    s.type === 'series'
+                );
                 
                 filteredWebtoons = allWebtoons;
                 grid.innerHTML = '';
                 
                 if (allWebtoons.length === 0) {
-                    grid.innerHTML = '<div class="no-content">No movies uploaded yet.</div>'; 
+                    grid.innerHTML = '<div class="no-content">No movies or series uploaded yet.</div>'; 
                 } else {
                     loadMore();
                 }
@@ -294,7 +298,7 @@ require_once __DIR__ . '/includes/session.php';
             document.getElementById('loadMoreBtn').classList.add('hidden');
 
             if (filteredWebtoons.length === 0) {
-                document.getElementById('webtoonGrid').innerHTML = '<div class="no-content">No movies matched your search.</div>';
+                document.getElementById('webtoonGrid').innerHTML = '<div class="no-content">No results matched your search.</div>';
             } else {
                 loadMore();
             }
@@ -317,10 +321,10 @@ require_once __DIR__ . '/includes/session.php';
                     </div>
                     <div class="enhanced-card-details">
                         <div class="enhanced-card-title">${escapeHtml(story.title)}</div>
-                        <div class="enhanced-card-sub">Latest: ${story.latest_chapter} &bull; ${story.time_ago}</div>
+                        <div class="enhanced-card-sub">${story.type.toUpperCase()} &bull; ${story.time_ago}</div>
                         <div class="enhanced-card-meta">
                             <span class="rating"><i class="fas fa-star"></i> ${story.rating}</span>
-                            <span class="read-btn">WATCH NOW <i class="fas fa-arrow-right" style="margin-left:3px;"></i></span>
+                            <span class="read-btn">WATCH <i class="fas fa-arrow-right" style="margin-left:3px;"></i></span>
                         </div>
                     </div>
                 </div>`;
